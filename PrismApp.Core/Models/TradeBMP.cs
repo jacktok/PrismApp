@@ -1,4 +1,4 @@
-﻿namespace PrismAppResearch.Models
+﻿namespace PrismApp.Core.Models
 {
     public class TradeBmp
     {

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using PrismAppResearch.Models;
+using PrismApp.Core.Models;
 
 namespace PrismApp.Core.ServiceCollection
 {
-    public class TradeBmpService: ITradeService<TradeBmp>
+    public class TradeBmpService : ITradeService<TradeBmp>
     {
         #region Implementation of ITradeService<TradeBmp>
 

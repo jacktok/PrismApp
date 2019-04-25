@@ -81,6 +81,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -112,9 +114,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
@@ -125,6 +125,18 @@
     <ProjectReference Include="..\LoginModule\LoginModule.csproj">
       <Project>{da636056-6b26-424b-95fd-d1e1a710884d}</Project>
       <Name>LoginModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModuleTradeBmp\ModuleTradeBmp.csproj">
+      <Project>{7698cdfe-a322-409a-a2a6-8225370744d6}</Project>
+      <Name>ModuleTradeBmp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModuleTradeCds\ModuleTradeCds.csproj">
+      <Project>{1b7f875a-9f5b-43e6-8e9a-f73b3fda8837}</Project>
+      <Name>ModuleTradeCds</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModuleTradeNgu\ModuleTradeNgu.csproj">
+      <Project>{9396d27d-5716-437a-811b-9e890b9c78df}</Project>
+      <Name>ModuleTradeNgu</Name>
     </ProjectReference>
     <ProjectReference Include="..\PrismApp.Core\PrismApp.Core.csproj">
       <Project>{5dbb014c-8562-4393-acbd-1a8fdef388ce}</Project>

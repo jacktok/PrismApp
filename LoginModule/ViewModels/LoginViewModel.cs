@@ -1,7 +1,9 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
+using Prism.Commands;
 using Prism.Mvvm;
 using PrismApp.Core;
-using PrismAppResearch.Models;
+using PrismApp.Core.Models;
 
 namespace LoginModule.ViewModels
 {
@@ -10,8 +12,21 @@ namespace LoginModule.ViewModels
         public LoginViewModel(IService server)
         {
             TradeList = new ObservableCollection<TradeBmp>(server.TradeBmpService.GetTrade());
+            LoginCommand = new DelegateCommand(LoginExec);
         }
 
+        private void LoginExec()
+        {
+            DialogResult = true;
+        }
+
+        private bool? _dialogResult;
+
+        public bool? DialogResult
+        {
+            get => _dialogResult;
+            set => SetProperty(ref _dialogResult, value);
+        }
 
         public string Title
         {
@@ -34,5 +49,9 @@ namespace LoginModule.ViewModels
             get => _tradeList;
             set => SetProperty(ref _tradeList, value);
         }
+
+
+        public DelegateCommand LoginCommand { get;}
+
     }
 }

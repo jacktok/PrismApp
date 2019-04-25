@@ -4,15 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrismApp.Views"
-        xmlns:regions="http://prismlibrary.com/"
+        xmlns:regions="http://prismlibrary.com/"  
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:viewModels="clr-namespace:PrismApp.ViewModels"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        d:DataContext="{d:DesignInstance viewModels:MainWindowViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="TEST" HorizontalAlignment="Center" FontSize="48"></TextBlock>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Trade Bmp" Command="{Binding NavigateCommand}" CommandParameter="TradeBmpMain"/>
+            <Button Grid.Column="1" Content="Trade NGU" Command="{Binding NavigateCommand}" CommandParameter="TradeNguMain"/>
+            <Button Grid.Column="2" Content="Trade CDS" Command="{Binding NavigateCommand}" CommandParameter="TradeCdsMain"/>
+        </Grid>
         <ContentControl Grid.Row="1" regions:RegionManager.RegionName="Content"></ContentControl>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Label Content="Add"></Label>
+            <TextBox Text="{Binding ItemText}" MinWidth="150"/>
+            <Button Content="Save" Command="{Binding AddItemCommand}"/>
+        </StackPanel>
     </Grid>
 </Window>
